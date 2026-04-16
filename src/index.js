@@ -31,6 +31,10 @@ app.get('/Authors', (req, res) =>{
     });
 })
 
+app.get('/', (req, res) => {
+    res.send('API está funcionando! /Message /Authors (Métodos GET) /sendMessage (Método POST)');
+});
+
 app.get('/Message', (req, res) =>{
     const sql = "SELECT * FROM Message";
     con.query(sql, (err, result) => {
