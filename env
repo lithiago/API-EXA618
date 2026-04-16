@@ -1,0 +1,5 @@
+DB_HOST=exa618-db-thiagoramon399-8fea.k.aivencloud.com
+DB_USER=avnadmin
+DB_PASSWORD=sua_senha_secreta_aqui
+DB_NAME=defaultdb
+DB_PORT=17069
