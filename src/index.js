@@ -9,8 +9,7 @@ const con = mysql.createConnection({
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
-    port: process.env.DB_PORT,
-    
+    port: process.env.DB_PORT
 });
 
 
@@ -43,7 +42,7 @@ app.get('/Message', (req, res) =>{
 
 app.post("/sendMessage", (req, res)=>{
     const { mensagem, Nome_Autor } = req.body;
-    const sql = "INSERT INTO message (mensagem, Nome_Autor) VALUES (?,?)";
+    const sql = "INSERT INTO Message (mensagem, Nome_Autor) VALUES (?,?)";
     
     con.query(sql, [mensagem, Nome_Autor], (err, result) => {
         if (err) return res.status(500).json(err);
