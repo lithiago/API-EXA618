@@ -42,7 +42,7 @@ app.get('/Message', (req, res) =>{
 
 app.post("/sendMessage", (req, res)=>{
     const { mensagem, Nome_Autor } = req.body;
-    const sql = "INSERT INTO Message (mensagem, Nome_Autor) VALUES (?,?)";
+    const sql = "INSERT INTO Message (msg, Nome_Autor) VALUES (?,?)";
     
     con.query(sql, [mensagem, Nome_Autor], (err, result) => {
         if (err) return res.status(500).json(err);
