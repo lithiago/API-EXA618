@@ -44,7 +44,7 @@ app.post("/sendMessage", (req, res)=>{
     const { mensagem, Nome_Autor } = req.body;
     const sql = "INSERT INTO message (mensagem, Nome_Autor) VALUES (?,?)";
     
-    con.query(sql, [content, id], (err, result) => {
+    con.query(sql, [mensagem, Nome_Autor], (err, result) => {
         if (err) return res.status(500).json(err);
         res.json({ message: "Mensagem Enviada", affectedRows: result.affectedRows });
     });
